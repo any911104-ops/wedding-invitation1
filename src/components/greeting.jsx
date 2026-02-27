@@ -2,12 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { Divider } from "antd";
 import {
-  GROOM_NAME,
-  GROOM_FATHER_NAME,
-  GROOM_MOTHER_NAME,
-  BRIDE_NAME,
-  BRIDE_FATHER_NAME,
-  BRIDE_MOTHER_NAME,
+  GROOM_NAME:"김창기",
+  GROOM_FATHER_NAME:"김학묵",
+  GROOM_MOTHER_NAME:"박미근",
+  BRIDE_NAME:"안윤정",
+  BRIDE_FATHER_NAME:"안병인",
+  BRIDE_MOTHER_NAME:"장혜랑",
 } from "../../config";
 import Flower from "../assets/flower1.png";
 
