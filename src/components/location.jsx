@@ -51,18 +51,24 @@ const Location = () => {
 useEffect(() => {
   const script = document.createElement("script");
   script.src =
-    "https://t1.daumcdn.net/kakaomapweb/place/jscss/roughmap/roughmapLoader.js";
-  script.async = true;
-
-  document.body.appendChild(script);
+    "//dapi.kakao.com/v2/maps/sdk.js?appkey=여기에_본인_카카오앱키&autoload=false";
+  document.head.appendChild(script);
 
   script.onload = () => {
-    new window.daum.roughmap.Lander({
-      timestamp: "1772094638308",
-      key: "i2gbi4qzzwx",
-      mapWidth: "640",
-      mapHeight: "360",
-    }).render();
+    window.kakao.maps.load(() => {
+      const container = document.getElementById("map");
+      const options = {
+        center: new window.kakao.maps.LatLng(37.401941, 126.922641),
+        level: 3,
+      };
+
+      const map = new window.kakao.maps.Map(container, options);
+
+      new window.kakao.maps.Marker({
+        position: options.center,
+        map: map,
+      });
+    });
   };
 }, []);
  
@@ -72,10 +78,8 @@ useEffect(() => {
         <Title>오시는 길</Title>
       </Divider>
       <Image src={Flower} />
-      <Map
-        id="daumRoughmapContainer1772094638308"
-        className="root_daum_roughmap root_daum_roughmap_landing"
-      ></Map>
+     <Map id="map" style={{ width: "100%", height: "350px" }} />
+      
       <Content>
         경기 안양시 만안구 안양로 104
         <br />
