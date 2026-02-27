@@ -88,9 +88,9 @@ const Location = () => {
     })();
   };
 
-  useEffect(() => {
-    InstallScript();
-  }, [InstallScript]);
+useEffect(() => {
+  InstallScript();
+}, []);
 
   return (
     <Wrapper>
