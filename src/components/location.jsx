@@ -37,6 +37,7 @@ const Content = styled.p`
 
 const Map = styled.div`
   width: 100%;
+  height: 350px;
   padding: 0;
 `;
 
@@ -48,32 +49,24 @@ const Location = () => {
   // <!-- 2. 설치 스크립트 * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다. -->
   // document.write 문제가 발생해서 해당 파일을 직접 가져온다음 수정했음
  
-  script.onload = () => {
-    window.kakao.maps.load(() => {
-      const container = document.getElementById("map");
-      const options = {
-        center: new window.kakao.maps.LatLng(37.401941, 126.922641),
-        level: 3,
-      };
-
-      const map = new window.kakao.maps.Map(container, options);
-
-      new window.kakao.maps.Marker({
-        position: options.center,
-        map: map,
-      });
-    });
-  };
-}, []);
- 
   return (
     <Wrapper>
       <Divider plain style={{ marginTop: 0, marginBottom: 32 }}>
         <Title>오시는 길</Title>
       </Divider>
       <Image src={Flower} />
-<Map id="map" style={{ width: "100%", height: "350px" }} />
-      
+
+<Map style={{ height: "350px" }}>
+  <iframe
+    title="위더스 안양 지도"
+    src="https://map.naver.com/v5/search/위더스%20안양"
+    width="100%"
+    height="100%"
+    style={{ border: 0 }}
+    loading="lazy"
+  />
+</Map>
+        
       <Content>
         경기 안양시 만안구 안양로 104
         <br />
