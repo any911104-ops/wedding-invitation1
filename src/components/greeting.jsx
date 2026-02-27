@@ -74,9 +74,9 @@ const Greeting = () => {
         앞날을 축복해 주시면 감사하겠습니다.
       </Content>
       <GroomBride data-aos="fade-up">
-        {GROOM_FATHER_NAME} · {GROOM_MOTHER_NAME}의 장남 {GROOM_NAME}
+       김학묵 · 박미근의 장남 {GROOM_NAME}
         <br />
-        {BRIDE_FATHER_NAME} · {BRIDE_MOTHER_NAME}의 장녀 {BRIDE_NAME}
+        안병인 · 장혜랑의 장녀 {BRIDE_NAME}
       </GroomBride>
     </Wrapper>
   );
